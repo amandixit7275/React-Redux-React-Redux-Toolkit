@@ -42,7 +42,7 @@ function reducer(state = initData, action) {
       total: state.total - action.payLoad.price,
     };
   }
-  return state;
+
   //
 }
 const store = createStore(reducer);
