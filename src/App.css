@@ -1,0 +1,16 @@
+.customDiv {
+  width: 280px;
+  height: 350px;
+  border: 2px solid black;
+  padding: 5px;
+  display: inline-block;
+  vertical-aligh: top;
+  margin: 10px;
+}
+select {
+  font-size: larger;
+  width: 200px;
+}
+li {
+  cursor: pointer;
+}
