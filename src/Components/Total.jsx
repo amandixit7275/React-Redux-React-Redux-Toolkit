@@ -2,11 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function Total() {
-  const total = useSelector((state) => state.total);
+  const loginDet = useSelector((state) => state.lr.loginDet);
+  const total = useSelector((state) => state.pr.total);
 
   return (
     <div className="customDiv">
-      <h3>Total : </h3>
+      <h2>Total</h2>
+      <h3>{loginDet}</h3>
+      <hr />
+
       {total}
     </div>
   );

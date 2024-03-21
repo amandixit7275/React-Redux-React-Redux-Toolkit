@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import * as actions from "./Actions";
 
 const initData = {
   products: [
@@ -27,24 +27,23 @@ const initData = {
   total: 0,
 };
 
-function reducer(state = initData, action) {
-  if (action.type === "PURCHASE") {
+function ProductReducer(state = initData, action) {
+  if (action.type === actions.PURCHASE) {
     return {
       ...state,
       cart: [...state.cart, action.payLoad],
       total: state.total + parseInt(action.payLoad.price),
     };
   }
-  if (action.type === "DELETE") {
+  if (action.type === actions.DELETE) {
     return {
       ...state,
       cart: state.cart.filter((_, index) => index != action.payLoad.index),
       total: state.total - action.payLoad.price,
     };
   }
-  return state;
-  //
-}
-const store = createStore(reducer);
 
-export default store;
+  return state;
+}
+
+export default ProductReducer;
