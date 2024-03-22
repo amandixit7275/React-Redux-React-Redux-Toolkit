@@ -1,7 +1,8 @@
 import React from "react";
 import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { PURCHASE } from "../store/Actions";
+import { PURCHASE } from "../store/action";
+import { purchase } from "../store/productSlice";
 
 export default function Purchase() {
   const loginDet = useSelector((state) => state.lr.loginDet);
@@ -12,7 +13,8 @@ export default function Purchase() {
     const pName = event.target.options[event.target.selectedIndex].text;
     const price = event.target.value;
     const obj = { pName, price };
-    dispatch({ type: PURCHASE, payLoad: obj });
+    // dispatch({ type: PURCHASE, payLoad: obj });
+    dispatch(purchase(obj));
   }
 
   return (

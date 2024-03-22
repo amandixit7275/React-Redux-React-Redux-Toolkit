@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DELETE } from "../store/Actions";
+import { DELETE } from "../store/action";
+import { deleteItem } from "../store/productSlice";
 
 export default function Cart() {
   const loginDet = useSelector((state) => state.lr.loginDet);
@@ -8,7 +9,8 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   function deleteHandler(index, price) {
-    dispatch({ type: DELETE, payLoad: { index, price } });
+    // dispatch({ type: DELETE, payLoad: { index, price } });
+    dispatch(deleteItem({ index, price }));
   }
   return (
     <div className="customDiv">
